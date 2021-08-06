@@ -7,11 +7,11 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     private View layout;
-    private int a;
+    private int b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        a = 10;
+        b = 10;
     }
 }
