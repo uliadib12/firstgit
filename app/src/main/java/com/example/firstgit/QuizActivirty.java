@@ -3,6 +3,7 @@ package com.example.firstgit;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -36,7 +37,7 @@ public class QuizActivirty extends AppCompatActivity {
         rb3 = findViewById(R.id.radio_button3);
         rb4 = findViewById(R.id.radio_button4);
         buttonConfirmNext = findViewById(R.id.button_confirm_next);
-        QuizDBHelper dbHelper = new QuizDBHelper(this);
+        QuizDBHelper dbHelper = new QuizDBHelper(QuizActivirty.this);
         questionList = dbHelper.getAllQuestions();
     }
 }

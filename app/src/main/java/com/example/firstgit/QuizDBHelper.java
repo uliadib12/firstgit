@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import com.example.firstgit.QuizContract.*;
 
 import androidx.annotation.Nullable;
@@ -31,6 +33,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
                 QuestionTable.COLUMN_OPTION1 + " TEXT, " +
                 QuestionTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionTable.COLUMN_ANSWER_NR + " INTEGER" +
                 ")";
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
@@ -57,8 +60,9 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(QuestionTable.COLUMN_QUESTION, question.getQuestion());
         cv.put(QuestionTable.COLUMN_OPTION1, question.getOptions1());
-        cv.put(QuestionTable.COLUMN_OPTION2, question.getOptions1());
-        cv.put(QuestionTable.COLUMN_OPTION3, question.getOptions1());
+        cv.put(QuestionTable.COLUMN_OPTION2, question.getOptions2());
+        cv.put(QuestionTable.COLUMN_OPTION3, question.getOptions3());
+        cv.put(QuestionTable.COLUMN_OPTION4, question.getOptions4());
         cv.put(QuestionTable.COLUMN_ANSWER_NR, question.getAnswerNr());
         db.insert(QuestionTable.TABLE_NAME, null, cv);
     }
